@@ -66,7 +66,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 1rem 0;
+      padding: 0.6rem 0;
       gap: 1.5rem;
     }
 
@@ -77,9 +77,8 @@
     }
 
     .brand-logo {
-      width: 80px;
-      height: 80px;
-      overflow: hidden;
+      width: 115px;
+      height: 115px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -89,25 +88,6 @@
       width: 100%;
       height: 100%;
       object-fit: contain;
-    }
-
-    .brand-text {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .brand-small {
-      font-size: 0.78rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: #64748b;
-    }
-
-    .brand-main {
-      font-size: 1.2rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      color: var(--icg-dark);
     }
 
     nav ul {
@@ -187,7 +167,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(to bottom right, rgba(2,6,23,0.75), rgba(15,23,42,0.9));
+      background: linear-gradient(to bottom right, rgba(2,6,23,0.8), rgba(15,23,42,0.96));
     }
 
     .hero-slide.active {
@@ -267,7 +247,7 @@
       font-weight: 600;
       border: none;
       cursor: pointer;
-      box-shadow: 0 16px 36px rgba(15,23,42,0.5);
+      box-shadow: 0 16px 36px rgba(15,23,42,0.55);
     }
 
     .btn-primary:hover {
@@ -370,7 +350,7 @@
       margin: 0 auto;
     }
 
-    /* MARKETS (like McCarthy "Markets") */
+    /* MARKETS */
     .markets {
       background: #ffffff;
     }
@@ -401,7 +381,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(15,23,42,0.9), transparent 55%);
+      background: linear-gradient(to top, rgba(15,23,42,0.85), transparent 55%);
     }
 
     .market-label {
@@ -900,7 +880,7 @@
       }
 
       .hero-overlay {
-        padding-top: 4rem;
+        padding-top: 4.2rem;
       }
 
       .insights-grid {
@@ -913,6 +893,16 @@
         display: none;
       }
 
+      .nav-inner {
+        padding-top: 0.4rem;
+        padding-bottom: 0.4rem;
+      }
+
+      .brand-logo {
+        width: 90px;
+        height: 90px;
+      }
+
       .nav-right {
         gap: 0.7rem;
       }
@@ -920,10 +910,6 @@
       .hero-bottom {
         flex-direction: column;
         align-items: flex-start;
-      }
-
-      .brand-main {
-        font-size: 1.05rem;
       }
     }
 
@@ -958,11 +944,8 @@
       <div class="nav-inner">
         <div class="brand">
           <div class="brand-logo">
-            <img src="icg-logo.png" alt="ICG Logo">
-          </div>
-          <div class="brand-text">
-            <span class="brand-small">ICG</span>
-            <span class="brand-main">Innovative Construction Group</span>
+            <!-- Make sure icg-logo.png is in your repo root -->
+            <img src="icg-logo.png" alt="ICG – Innovative Construction Group">
           </div>
         </div>
 
@@ -989,10 +972,10 @@
   <!-- HERO with SLIDER -->
   <section class="hero" id="home">
     <div class="hero-slider">
-      <!-- construction / architecture hero images -->
-      <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80');"></div>
-      <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1431576901776-e539bd916ba2?auto=format&fit=crop&w=1600&q=80');"></div>
-      <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1486325212027-624197f65b54?auto=format&fit=crop&w=1600&q=80');"></div>
+      <!-- More "premium" architecture / construction images -->
+      <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1506377295352-e3154d43ea9e?auto=format&fit=crop&w=1600&q=80');"></div>
+      <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1486304873000-235643847519?auto=format&fit=crop&w=1600&q=80');"></div>
+      <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1600&q=80');"></div>
     </div>
 
     <div class="hero-overlay">
@@ -1055,7 +1038,7 @@
 
       <div class="markets-grid">
         <article class="market-card">
-          <div class="market-image" style="background-image:url('https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1400&q=80');">
+          <div class="market-image" style="background-image:url('https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=1400&q=80');">
             <div class="market-label">Residential</div>
           </div>
           <div class="market-body">
@@ -1067,7 +1050,7 @@
         </article>
 
         <article class="market-card">
-          <div class="market-image" style="background-image:url('https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=1400&q=80');">
+          <div class="market-image" style="background-image:url('https://images.unsplash.com/photo-1496307042754-89c3d0f04bb0?auto=format&fit=crop&w=1400&q=80');">
             <div class="market-label">Commercial</div>
           </div>
           <div class="market-body">
@@ -1079,7 +1062,7 @@
         </article>
 
         <article class="market-card">
-          <div class="market-image" style="background-image:url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1400&q=80');">
+          <div class="market-image" style="background-image:url('https://images.unsplash.com/photo-1545243424-0ce743321e11?auto=format&fit=crop&w=1400&q=80');">
             <div class="market-label">Hospitality</div>
           </div>
           <div class="market-body">
@@ -1105,7 +1088,7 @@
     </div>
   </section>
 
-  <!-- STRIP – sectors / project types -->
+  <!-- STRIP – project types -->
   <div class="strip">
     <div class="container strip-inner">
       <div class="strip-title">Project Types</div>
