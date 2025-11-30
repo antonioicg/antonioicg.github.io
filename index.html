@@ -1,7 +1,125 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ICG – Innovative Construction Group</title>
+
+  <style>
+    body { 
+      font-family: Arial, sans-serif; 
+      margin: 0; 
+      padding: 0; 
+      background: #f5f5f5;
+    }
+
+    header {
+      background: #02232f;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    header img {
+      height: 60px;
+      width: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    h1 {
+      font-size: 22px;
+      margin: 0;
+    }
+
+    .hero {
+      padding: 40px;
+      background: #06445a;
+      color: white;
+      text-align: center;
+    }
+
+    .section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+      background: #02232f;
+      color: white;
+    }
+  </style>
+</head>
+
 <body>
-<h1>ICG Website Test</h1>
-<p>If you see this page, GitHub Pages works.</p>
+
+  <!-- HEADER -->
+  <header>
+    <img src="icg-logo.png" alt="ICG Logo">
+    <h1>ICG – Innovative Construction Group</h1>
+  </header>
+
+  <!-- HERO -->
+  <div class="hero">
+    <h2>High-End Fit-Outs & Construction</h2>
+    <p>Architecture, Engineering, and Execution — All Under One Roof.</p>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="section">
+    <h2>About Us</h2>
+    <p>
+      ICG is a multidisciplinary contracting company specializing in high-end villas, residential renovations, 
+      commercial fit-outs, and coordinated MEP + architectural execution.
+    </p>
+    <p>
+      Our team includes:
+      <ul>
+        <li>Architect</li>
+        <li>Civil Engineer</li>
+        <li>Mechanical Engineer</li>
+        <li>Site Architect</li>
+      </ul>
+    </p>
+  </div>
+
+  <!-- SERVICES -->
+  <div class="section">
+    <h2>Our Services</h2>
+    <ul>
+      <li>Turn-key luxury interior fit-outs</li>
+      <li>Full architectural & engineering design</li>
+      <li>MEP coordination & installation</li>
+      <li>Renovation, construction, and finishing works</li>
+      <li>Site supervision & project management</li>
+    </ul>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="section">
+    <h2>Contact Us</h2>
+    <p>Email: info@icgsal.com</p>
+    <p>Phone: +000 000 000</p>
+    <p>Website: icgsal.com</p>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    © <span id="year"></span> ICG – Innovative Construction Group
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
 </body>
 </html>
