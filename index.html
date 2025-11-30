@@ -6,7 +6,7 @@
   <title>ICG – Innovative Construction Group</title>
   <meta name="description" content="ICG – Innovative Construction Group: high-end construction, fit-outs and engineering-led delivery for luxury projects.">
 
-  <!-- Clean professional font similar vibe to McCarthy -->
+  <!-- Clean professional font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -370,6 +370,70 @@
       margin: 0 auto;
     }
 
+    /* MARKETS (like McCarthy "Markets") */
+    .markets {
+      background: #ffffff;
+    }
+
+    .markets-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    .market-card {
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--icg-border);
+      background: #020617;
+      color: #eff6ff;
+      cursor: default;
+    }
+
+    .market-image {
+      height: 170px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .market-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(15,23,42,0.9), transparent 55%);
+    }
+
+    .market-label {
+      position: absolute;
+      left: 1rem;
+      bottom: 0.9rem;
+      z-index: 1;
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #cbd5f5;
+    }
+
+    .market-body {
+      padding: 0.9rem 1rem 1.05rem;
+      font-size: 0.88rem;
+      color: #1f2933;
+      background: #f9fafb;
+    }
+
+    .market-title {
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: var(--icg-mid);
+      margin-bottom: 0.2rem;
+    }
+
+    .market-text {
+      font-size: 0.86rem;
+      color: var(--icg-muted);
+    }
+
     /* ABOUT */
     .about {
       background: #ffffff;
@@ -637,6 +701,57 @@
       color: var(--icg-mid);
     }
 
+    /* INSIGHTS / NEWS */
+    .insights {
+      background: #0f172a;
+      color: #e5f2ff;
+    }
+
+    .insights .section-kicker {
+      color: #7dd3fc;
+    }
+    .insights .section-title {
+      color: #ffffff;
+    }
+    .insights .section-subtitle {
+      color: #9fb4c9;
+    }
+
+    .insights-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.6rem;
+      margin-top: 0.5rem;
+    }
+
+    .insight-card {
+      border-radius: 18px;
+      border: 1px solid rgba(148,163,184,0.5);
+      background: rgba(15,23,42,0.9);
+      padding: 1.1rem 1.1rem 1.2rem;
+      font-size: 0.9rem;
+    }
+
+    .insight-meta {
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #a5b4fc;
+      margin-bottom: 0.35rem;
+    }
+
+    .insight-title {
+      font-size: 0.98rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      color: #ffffff;
+    }
+
+    .insight-text {
+      font-size: 0.88rem;
+      color: #cbd5f5;
+    }
+
     /* CONTACT */
     .contact {
       background: var(--icg-light);
@@ -771,6 +886,12 @@
     }
 
     /* RESPONSIVE */
+    @media (max-width: 1100px) {
+      .markets-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
     @media (max-width: 960px) {
       .about-layout,
       .approach-layout,
@@ -780,6 +901,10 @@
 
       .hero-overlay {
         padding-top: 4rem;
+      }
+
+      .insights-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
@@ -805,7 +930,8 @@
     @media (max-width: 720px) {
       .services-grid,
       .why-grid,
-      .approach-steps {
+      .approach-steps,
+      .insights-grid {
         grid-template-columns: minmax(0, 1fr);
       }
 
@@ -844,9 +970,11 @@
           <nav>
             <ul>
               <li><a href="#home">Home</a></li>
+              <li><a href="#markets">Markets</a></li>
               <li><a href="#about">About</a></li>
               <li><a href="#services">Services</a></li>
               <li><a href="#approach">Approach</a></li>
+              <li><a href="#insights">Insights</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
           </nav>
@@ -910,6 +1038,69 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARKETS -->
+  <section class="markets" id="markets">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">Markets</div>
+        <h2 class="section-title">Spaces we focus on</h2>
+        <p class="section-subtitle">
+          ICG concentrates on high-value, detail-driven projects where coordination and finishing quality really matter.
+        </p>
+      </div>
+
+      <div class="markets-grid">
+        <article class="market-card">
+          <div class="market-image" style="background-image:url('https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1400&q=80');">
+            <div class="market-label">Residential</div>
+          </div>
+          <div class="market-body">
+            <div class="market-title">Private villas & residences</div>
+            <div class="market-text">
+              Full renovations, extensions and high-end interior fit-outs for villas and apartments.
+            </div>
+          </div>
+        </article>
+
+        <article class="market-card">
+          <div class="market-image" style="background-image:url('https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=1400&q=80');">
+            <div class="market-label">Commercial</div>
+          </div>
+          <div class="market-body">
+            <div class="market-title">Offices & workplaces</div>
+            <div class="market-text">
+              Turn-key offices, showrooms and commercial spaces with integrated MEP and finishes.
+            </div>
+          </div>
+        </article>
+
+        <article class="market-card">
+          <div class="market-image" style="background-image:url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1400&q=80');">
+            <div class="market-label">Hospitality</div>
+          </div>
+          <div class="market-body">
+            <div class="market-title">F&B & hospitality fit-outs</div>
+            <div class="market-text">
+              Restaurants, lounges and hospitality spaces where ambiance, lighting and details are key.
+            </div>
+          </div>
+        </article>
+
+        <article class="market-card">
+          <div class="market-image" style="background-image:url('https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1400&q=80');">
+            <div class="market-label">Technical</div>
+          </div>
+          <div class="market-body">
+            <div class="market-title">Technical & infrastructure</div>
+            <div class="market-text">
+              Engineering-heavy scopes with mechanical, electrical and structural coordination.
+            </div>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -1124,6 +1315,45 @@
             We know site operations are where projects succeed or fail. Our structure is built specifically to control that.
           </p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSIGHTS / NEWS -->
+  <section class="insights" id="insights">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">Insights</div>
+        <h2 class="section-title">Updates from ICG</h2>
+        <p class="section-subtitle">
+          A snapshot of how we think about planning, executing and maintaining high-end projects.
+        </p>
+      </div>
+
+      <div class="insights-grid">
+        <article class="insight-card">
+          <div class="insight-meta">Project update</div>
+          <div class="insight-title">Coordinating structure and finishes in villa renovations</div>
+          <div class="insight-text">
+            How early structural decisions and MEP routing protect the final interior design and keep changes on site under control.
+          </div>
+        </article>
+
+        <article class="insight-card">
+          <div class="insight-meta">Site operations</div>
+          <div class="insight-title">Why daily presence on site matters</div>
+          <div class="insight-text">
+            The small decisions taken every day on site have the biggest impact on quality, deadlines and client experience.
+          </div>
+        </article>
+
+        <article class="insight-card">
+          <div class="insight-meta">Preconstruction</div>
+          <div class="insight-title">Designing with execution in mind</div>
+          <div class="insight-text">
+            Integrating architecture, civil and mechanical design early reduces clashes, rework and budget surprises later on.
+          </div>
+        </article>
       </div>
     </div>
   </section>
