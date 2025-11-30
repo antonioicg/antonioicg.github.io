@@ -4,15 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ICG – Innovative Construction Group</title>
-  <meta name="description" content="ICG – Innovative Construction Group: high-end architectural design, MEP engineering, fit-outs and construction for luxury projects.">
+  <meta name="description" content="ICG – Innovative Construction Group: high-end construction, fit-outs and engineering-led delivery for luxury projects.">
   <style>
     :root {
-      --icg-dark: #02232f;
-      --icg-mid: #06445a;
-      --icg-light: #f4f7f9;
+      --icg-dark: #071621;
+      --icg-mid: #0b3043;
+      --icg-light: #f4f6f9;
       --icg-accent: #0fa3b1;
+      --icg-accent-soft: #e0f5f7;
       --icg-text: #0c1920;
       --icg-muted: #6b7a86;
+      --icg-border: #d8e0ea;
     }
 
     * {
@@ -38,27 +40,27 @@
       display: block;
     }
 
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* HEADER – white, clean, logo stands out */
     header {
       position: sticky;
       top: 0;
-      z-index: 50;
-      background: rgba(2, 35, 47, 0.96);
-      backdrop-filter: blur(10px);
-      color: white;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-    }
-
-    .container {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 1.2rem;
+      z-index: 40;
+      background: #ffffff;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
     }
 
     .nav-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0.6rem 0;
+      padding: 0.7rem 0;
       gap: 1rem;
     }
 
@@ -69,15 +71,15 @@
     }
 
     .brand-logo {
-      width: 64px;
-      height: 64px;
+      width: 60px;
+      height: 60px;
+      border-radius: 999px;
+      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: radial-gradient(circle at 30% 0%, #0fa3b1, #02232f);
-      border-radius: 999px;
-      overflow: hidden;
-      padding: 6px;
+      background: #f1f5f9;
+      box-shadow: 0 0 0 1px rgba(15,23,42,0.08);
     }
 
     .brand-logo img {
@@ -92,28 +94,30 @@
     }
 
     .brand-small {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      opacity: 0.8;
+      color: #64748b;
     }
 
     .brand-main {
       font-size: 1.05rem;
       font-weight: 600;
       text-transform: uppercase;
+      color: var(--icg-dark);
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      gap: 1.8rem;
+      gap: 1.5rem;
       font-size: 0.9rem;
+      color: #1e293b;
     }
 
     nav a {
       position: relative;
-      padding-bottom: 0.15rem;
+      padding-bottom: 0.12rem;
     }
 
     nav a::after {
@@ -123,7 +127,7 @@
       bottom: 0;
       width: 0;
       height: 2px;
-      background: linear-gradient(90deg, #0fa3b1, #32e0c4);
+      background: var(--icg-accent);
       transition: width 0.2s ease;
     }
 
@@ -131,177 +135,196 @@
       width: 100%;
     }
 
-    /* Hero */
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .header-phone {
+      font-size: 0.85rem;
+      color: #0b3043;
+      white-space: nowrap;
+    }
+
+    .header-phone span {
+      font-weight: 600;
+      color: var(--icg-accent);
+    }
+
+    .header-phone:hover {
+      opacity: 0.9;
+    }
+
+    /* HERO – big, bold, construction feel */
     .hero {
-      background: radial-gradient(circle at top left, #0fa3b1 0%, #02232f 45%, #020b12 100%);
-      color: white;
-      padding: 4.5rem 0 4rem;
+      background: radial-gradient(circle at top left, #0fa3b1 0%, #0b3043 40%, #020813 100%);
+      color: #ffffff;
+      padding: 4.25rem 0 3.75rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at bottom right, rgba(255,255,255,0.06), transparent 55%);
+      opacity: 0.8;
+      pointer-events: none;
     }
 
     .hero-inner {
+      position: relative;
+      z-index: 1;
       display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.2fr);
       gap: 2.5rem;
       align-items: center;
     }
 
-    .hero-kicker {
-      font-size: 0.85rem;
+    .hero-eyebrow {
+      font-size: 0.82rem;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: #b8d5e5;
+      color: #cbdff0;
       margin-bottom: 0.9rem;
     }
 
     .hero-title {
-      font-size: clamp(2.2rem, 3vw + 1rem, 3rem);
-      line-height: 1.1;
+      font-size: clamp(2.3rem, 3vw + 1rem, 3.3rem);
+      line-height: 1.05;
       margin-bottom: 1rem;
     }
 
     .hero-highlight {
-      background: linear-gradient(120deg, #32e0c4, #ffffff);
-      -webkit-background-clip: text;
-      color: transparent;
+      color: #e5f8ff;
     }
 
-    .hero-text {
-      font-size: 0.98rem;
-      color: #d4e4f0;
+    .hero-subtitle {
+      font-size: 0.97rem;
+      color: #d2e4f3;
       max-width: 34rem;
-      margin-bottom: 1.6rem;
+      margin-bottom: 1.5rem;
     }
 
-    .hero-badges {
+    .hero-pills {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-bottom: 2rem;
+      gap: 0.5rem;
+      margin-bottom: 1.8rem;
     }
 
-    .badge {
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.16);
-      padding: 0.35rem 0.75rem;
+    .pill {
       font-size: 0.78rem;
-      color: #e3f3ff;
-      background: rgba(0,0,0,0.12);
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 0.35rem 0.8rem;
+      background: rgba(15,23,42,0.4);
+      color: #e2f3ff;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
+      gap: 0.9rem;
       align-items: center;
+      margin-bottom: 0.8rem;
     }
 
     .btn-primary {
       border-radius: 999px;
-      background: linear-gradient(135deg, #32e0c4, #0fa3b1);
-      color: #02232f;
-      padding: 0.75rem 1.6rem;
-      font-size: 0.92rem;
+      background: #ffffff;
+      color: #0b3043;
+      padding: 0.78rem 1.7rem;
+      font-size: 0.88rem;
       font-weight: 600;
       border: none;
       cursor: pointer;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      box-shadow: 0 12px 30px rgba(15,23,42,0.35);
     }
 
     .btn-primary:hover {
-      filter: brightness(1.05);
       transform: translateY(-1px);
+      filter: brightness(0.98);
     }
 
-    .btn-ghost {
+    .btn-outline {
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.4);
       background: transparent;
-      color: #e2f3ff;
-      padding: 0.7rem 1.4rem;
-      font-size: 0.9rem;
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      color: #e2e8f0;
+      padding: 0.72rem 1.5rem;
+      font-size: 0.88rem;
       cursor: pointer;
     }
 
     .hero-note {
-      font-size: 0.78rem;
-      color: #9fc0d6;
+      font-size: 0.8rem;
+      color: #c5d9ea;
     }
 
-    .hero-card {
-      background: radial-gradient(circle at top, #0fa3b1 0%, #02232f 40%, #020b12 100%);
-      border-radius: 22px;
-      border: 1px solid rgba(255,255,255,0.18);
-      padding: 1.4rem 1.2rem 1.2rem;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.4);
+    .hero-panel {
+      background: rgba(15,23,42,0.85);
+      border-radius: 18px;
+      border: 1px solid rgba(148,163,184,0.5);
+      padding: 1.3rem 1.2rem 1.1rem;
+      box-shadow: 0 18px 45px rgba(15,23,42,0.8);
+      font-size: 0.88rem;
     }
 
-    .hero-card-title {
+    .hero-panel-title {
       font-size: 0.9rem;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: #b2dff2;
-      margin-bottom: 0.6rem;
+      color: #cbdff0;
+      margin-bottom: 0.5rem;
     }
 
-    .hero-card-main {
-      font-size: 1.05rem;
-      margin-bottom: 0.9rem;
+    .hero-panel-text {
+      color: #e5f1fb;
+      margin-bottom: 1rem;
     }
 
     .hero-stats {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.9rem;
-      margin-bottom: 0.9rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 0.7rem;
     }
 
-    .stat {
-      padding: 0.55rem 0.6rem;
-      border-radius: 14px;
-      background: rgba(0,0,0,0.25);
-      border: 1px solid rgba(255,255,255,0.15);
+    .hero-stat {
+      flex: 1 1 120px;
+      border-radius: 12px;
+      border: 1px solid rgba(148,163,184,0.7);
+      padding: 0.55rem 0.7rem;
+      background: linear-gradient(135deg, rgba(15,23,42,0.9), rgba(15,118,110,0.35));
+    }
+
+    .hero-stat-label {
       font-size: 0.78rem;
+      color: #c4d7ea;
     }
 
-    .stat span {
-      display: block;
-    }
-
-    .stat-figure {
-      font-size: 1.05rem;
+    .hero-stat-value {
+      font-size: 0.98rem;
       font-weight: 600;
       color: #ffffff;
     }
 
-    .stat-label {
-      font-size: 0.75rem;
-      color: #b8d5e5;
-    }
-
-    .hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
+    .hero-footer {
+      font-size: 0.76rem;
+      color: #a9bed2;
       margin-top: 0.4rem;
     }
 
-    .hero-tag {
-      font-size: 0.7rem;
-      padding: 0.25rem 0.55rem;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.06);
-      color: #d9ebf7;
-      border: 1px solid rgba(255,255,255,0.16);
-    }
-
-    /* Sections */
+    /* SECTION BASE */
     section {
       padding: 3.5rem 0;
     }
 
     .section-header {
-      text-align: center;
-      margin-bottom: 2.4rem;
+      margin-bottom: 2.1rem;
     }
 
     .section-kicker {
@@ -309,117 +332,167 @@
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--icg-mid);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
     }
 
     .section-title {
       font-size: 1.7rem;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.3rem;
+      color: var(--icg-dark);
     }
 
     .section-subtitle {
-      color: var(--icg-muted);
       font-size: 0.95rem;
+      color: var(--icg-muted);
       max-width: 32rem;
+    }
+
+    .section-header.center {
+      text-align: center;
+    }
+    .section-header.center .section-subtitle {
       margin: 0 auto;
     }
 
-    /* About */
+    /* ABOUT */
     .about {
-      background: var(--icg-light);
+      background: #ffffff;
     }
 
-    .about-grid {
+    .about-layout {
       display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2.6fr);
-      gap: 2.5rem;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.2fr);
+      gap: 2.4rem;
       align-items: start;
     }
 
     .about-text p {
-      margin-bottom: 0.9rem;
       font-size: 0.95rem;
-      color: #3a4a55;
+      color: #374151;
+      margin-bottom: 0.9rem;
     }
 
     .about-list {
       list-style: none;
-      margin-top: 0.5rem;
+      margin-top: 0.6rem;
     }
 
     .about-list li {
       display: flex;
       align-items: flex-start;
-      gap: 0.5rem;
-      margin-bottom: 0.5rem;
-      font-size: 0.92rem;
-      color: #31414d;
+      gap: 0.4rem;
+      font-size: 0.9rem;
+      color: #1f2933;
+      margin-bottom: 0.45rem;
     }
 
     .about-list li::before {
       content: "▸";
       color: var(--icg-accent);
       margin-top: 0.15rem;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
     }
 
     .about-card {
-      background: white;
-      border-radius: 18px;
-      padding: 1.4rem 1.3rem;
-      box-shadow: 0 10px 30px rgba(15, 88, 115, 0.15);
-      border: 1px solid #e0e8f0;
+      border-radius: 16px;
+      border: 1px solid var(--icg-border);
+      background: var(--icg-light);
+      padding: 1.3rem 1.2rem;
       font-size: 0.9rem;
-      color: #31414d;
+      color: #1f2933;
+      box-shadow: 0 10px 30px rgba(15,23,42,0.08);
     }
 
     .about-card-title {
       font-size: 0.95rem;
       font-weight: 600;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
       color: var(--icg-mid);
     }
 
-    /* Services */
+    /* STRIP – “Markets / Sectors” style like McCarthy */
+    .strip {
+      background: var(--icg-dark);
+      color: #e5f2ff;
+      padding: 1.4rem 0;
+    }
+
+    .strip-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.88rem;
+    }
+
+    .strip-title {
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.8rem;
+      color: #a3d5e6;
+    }
+
+    .strip-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .strip-tag {
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.7);
+      padding: 0.28rem 0.7rem;
+      font-size: 0.82rem;
+      background: rgba(15,23,42,0.4);
+    }
+
+    /* SERVICES */
+    .services {
+      background: var(--icg-light);
+    }
+
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.5rem;
+      gap: 1.4rem;
     }
 
     .service-card {
-      border-radius: 18px;
-      border: 1px solid #e1e9f0;
-      padding: 1.35rem 1.2rem 1.4rem;
-      background: white;
-      box-shadow: 0 8px 22px rgba(3, 32, 45, 0.07);
-      display: flex;
-      flex-direction: column;
-      gap: 0.55rem;
+      background: #ffffff;
+      border-radius: 16px;
+      border: 1px solid var(--icg-border);
+      padding: 1.3rem 1.15rem 1.35rem;
+      box-shadow: 0 10px 26px rgba(15,23,42,0.06);
+      font-size: 0.9rem;
     }
 
     .service-label {
       font-size: 0.78rem;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      letter-spacing: 0.16em;
       color: var(--icg-mid);
+      margin-bottom: 0.3rem;
     }
 
     .service-title {
       font-size: 1rem;
       font-weight: 600;
+      margin-bottom: 0.25rem;
+      color: var(--icg-dark);
     }
 
     .service-desc {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       color: var(--icg-muted);
+      margin-bottom: 0.4rem;
     }
 
     .service-items {
-      margin-top: 0.4rem;
       list-style: none;
       font-size: 0.86rem;
-      color: #3a4a55;
+      color: #374151;
     }
 
     .service-items li::before {
@@ -427,109 +500,105 @@
       color: var(--icg-accent);
     }
 
-    /* Projects / Highlights */
-    .projects {
-      background: #040f16;
-      color: #e9f5ff;
+    /* APPROACH / PROJECT STYLE */
+    .approach {
+      background: #0b3043;
+      color: #e5f2ff;
     }
 
-    .projects .section-header .section-kicker {
-      color: #7cdcf0;
+    .approach .section-kicker {
+      color: #8ed8e3;
+    }
+    .approach .section-title {
+      color: #ffffff;
+    }
+    .approach .section-subtitle {
+      color: #b5cfe3;
     }
 
-    .projects .section-header .section-subtitle {
-      color: #9db8c8;
-    }
-
-    .project-grid {
+    .approach-layout {
       display: grid;
-      grid-template-columns: 1.3fr 1fr;
-      gap: 2rem;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.2fr);
+      gap: 2.1rem;
       align-items: stretch;
+      margin-top: 0.8rem;
     }
 
-    .project-main {
-      border-radius: 20px;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: radial-gradient(circle at top left, rgba(50,224,196,0.15), rgba(0,0,0,0.85));
-      padding: 1.5rem 1.4rem;
+    .approach-main {
+      border-radius: 18px;
+      border: 1px solid rgba(148,163,184,0.5);
+      background: radial-gradient(circle at top left, rgba(15,163,177,0.18), rgba(15,23,42,0.9));
+      padding: 1.4rem 1.3rem;
+      font-size: 0.9rem;
     }
 
-    .project-main h3 {
-      font-size: 1.15rem;
+    .approach-main h3 {
+      font-size: 1.1rem;
       margin-bottom: 0.5rem;
     }
 
-    .project-main p {
-      font-size: 0.92rem;
-      color: #c5d9e5;
-      margin-bottom: 1rem;
+    .approach-main p {
+      color: #d4e4f2;
+      margin-bottom: 0.8rem;
     }
 
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .project-tag {
-      font-size: 0.75rem;
-      padding: 0.3rem 0.7rem;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.18);
-      background: rgba(0,0,0,0.4);
-    }
-
-    .project-meta {
+    .approach-steps {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 0.9rem;
-      margin-top: 0.5rem;
+      margin-top: 0.6rem;
     }
 
-    .project-meta-item {
+    .step {
+      border-radius: 14px;
+      border: 1px solid rgba(148,163,184,0.5);
+      padding: 0.7rem 0.75rem;
+      background: rgba(15,23,42,0.9);
       font-size: 0.8rem;
-      color: #b0c7d6;
+      color: #dbeafe;
     }
 
-    .project-meta-item span {
-      display: block;
+    .step-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #a5d8e8;
+      margin-bottom: 0.15rem;
     }
 
-    .project-meta-label {
-      font-size: 0.76rem;
-      opacity: 0.8;
-    }
-
-    .project-meta-value {
+    .step-title {
       font-weight: 600;
+      margin-bottom: 0.1rem;
       color: #ffffff;
     }
 
-    .project-side {
+    .approach-side {
       display: flex;
       flex-direction: column;
-      gap: 0.9rem;
+      gap: 0.8rem;
     }
 
-    .project-card {
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.14);
-      padding: 1rem;
-      background: rgba(1,10,16,0.9);
+    .approach-card {
+      border-radius: 14px;
+      border: 1px solid rgba(148,163,184,0.5);
+      background: rgba(6,15,25,0.9);
+      padding: 0.9rem 0.85rem;
       font-size: 0.86rem;
-      color: #c7d8e4;
+      color: #e5f2ff;
     }
 
-    .project-card-title {
+    .approach-card-title {
       font-size: 0.9rem;
       font-weight: 600;
-      margin-bottom: 0.3rem;
-      color: #f2fbff;
+      margin-bottom: 0.25rem;
+      color: #ffffff;
     }
 
-    /* Why ICG */
+    /* WHY ICG */
+    .why {
+      background: #ffffff;
+    }
+
     .why-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -537,41 +606,36 @@
     }
 
     .why-card {
-      border-radius: 18px;
-      border: 1px solid #e2e9f1;
-      padding: 1.2rem 1.1rem;
-      background: #f9fbfd;
+      border-radius: 16px;
+      border: 1px solid var(--icg-border);
+      background: #f9fbff;
+      padding: 1.15rem 1.1rem;
       font-size: 0.9rem;
-      color: #31414d;
+      color: #1f2933;
     }
 
     .why-title {
       font-size: 0.98rem;
       font-weight: 600;
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.3rem;
       color: var(--icg-mid);
     }
 
-    /* Contact */
+    /* CONTACT */
     .contact {
-      background: var(--icg-dark);
-      color: white;
+      background: var(--icg-light);
     }
 
-    .contact .section-header .section-subtitle {
-      color: #b7cfe0;
-    }
-
-    .contact-grid {
+    .contact-layout {
       display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.2fr);
       gap: 2rem;
       align-items: start;
     }
 
     .contact-info {
       font-size: 0.94rem;
-      color: #d8e8f3;
+      color: #1f2933;
     }
 
     .contact-info p {
@@ -585,90 +649,95 @@
     }
 
     .contact-list li {
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.35rem;
     }
 
     .contact-list span {
       font-weight: 600;
-      color: #ffffff;
     }
 
-    .contact-form {
-      background: rgba(0,0,0,0.35);
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,0.16);
-      padding: 1.4rem 1.3rem;
+    .contact-list a {
+      color: var(--icg-mid);
+    }
+
+    .contact-note {
+      font-size: 0.8rem;
+      color: var(--icg-muted);
+      margin-top: 0.4rem;
+    }
+
+    .contact-card {
+      background: #ffffff;
+      border-radius: 16px;
+      border: 1px solid var(--icg-border);
+      padding: 1.25rem 1.2rem;
       font-size: 0.9rem;
+      box-shadow: 0 10px 26px rgba(15,23,42,0.06);
     }
 
-    .contact-form-row {
+    .contact-row {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 0.9rem;
+      margin-bottom: 0.8rem;
     }
 
     .field {
       display: flex;
       flex-direction: column;
-      gap: 0.2rem;
-      margin-bottom: 0.8rem;
+      gap: 0.22rem;
     }
 
     label {
-      font-size: 0.82rem;
-      color: #e2f2ff;
+      font-size: 0.78rem;
+      color: #475569;
     }
 
     input,
     textarea,
     select {
       border-radius: 10px;
-      border: 1px solid rgba(255,255,255,0.35);
+      border: 1px solid var(--icg-border);
       padding: 0.55rem 0.6rem;
       font-size: 0.86rem;
-      background: rgba(2, 18, 26, 0.9);
-      color: white;
       outline: none;
+      background: #f9fafb;
+      color: #111827;
     }
 
     input::placeholder,
     textarea::placeholder {
-      color: #8dabbe;
+      color: #94a3b8;
     }
 
     textarea {
-      min-height: 120px;
+      min-height: 110px;
       resize: vertical;
-    }
-
-    .contact-note {
-      font-size: 0.78rem;
-      color: #9db9cb;
-      margin-top: 0.4rem;
     }
 
     .contact-submit {
       display: inline-flex;
       align-items: center;
-      gap: 0.3rem;
+      gap: 0.35rem;
       margin-top: 0.3rem;
     }
 
-    .btn-primary-contact {
+    .btn-contact {
       border-radius: 999px;
-      background: linear-gradient(135deg, #32e0c4, #0fa3b1);
-      color: #02232f;
+      background: var(--icg-accent);
+      color: #022c33;
       padding: 0.65rem 1.4rem;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       font-weight: 600;
       border: none;
       cursor: pointer;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      box-shadow: 0 10px 26px rgba(15,23,42,0.18);
     }
 
+    /* FOOTER */
     footer {
-      background: #020b11;
-      color: #8da2b0;
+      background: #020617;
+      color: #9ca3af;
       font-size: 0.8rem;
       padding: 0.9rem 0 1.1rem;
     }
@@ -677,40 +746,56 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      gap: 0.6rem;
       align-items: center;
+      gap: 0.6rem;
     }
 
     .footer-inner a {
-      color: #c0d7e6;
+      color: #e5f2ff;
     }
 
-    /* Responsive */
-    @media (max-width: 880px) {
-      nav ul {
-        display: none;
-      }
-
+    /* RESPONSIVE */
+    @media (max-width: 960px) {
       .hero-inner,
-      .about-grid,
-      .project-grid,
-      .contact-grid {
+      .about-layout,
+      .approach-layout,
+      .contact-layout {
         grid-template-columns: minmax(0, 1fr);
       }
 
       .hero {
         padding-top: 3.3rem;
       }
+
+      .hero-panel {
+        margin-top: 0.8rem;
+      }
+    }
+
+    @media (max-width: 800px) {
+      nav ul {
+        display: none;
+      }
+
+      .nav-right {
+        gap: 0.7rem;
+      }
     }
 
     @media (max-width: 720px) {
       .services-grid,
-      .why-grid {
+      .why-grid,
+      .approach-steps {
         grid-template-columns: minmax(0, 1fr);
       }
 
       section {
         padding: 3rem 0;
+      }
+
+      .strip-inner {
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
   </style>
@@ -723,23 +808,28 @@
       <div class="nav-inner">
         <div class="brand">
           <div class="brand-logo">
-            <!-- Make sure icg-logo.png is in the same folder as this file -->
-            <img src="icg-logo.png" alt="ICG Innovative Construction Group Logo">
+            <img src="icg-logo.png" alt="ICG Logo">
           </div>
           <div class="brand-text">
             <span class="brand-small">ICG</span>
             <span class="brand-main">Innovative Construction Group</span>
           </div>
         </div>
-        <nav>
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#projects">Approach</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
+
+        <div class="nav-right">
+          <nav>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#approach">Approach</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
+          <a href="tel:+96170345333" class="header-phone">
+            Call us: <span>+961 70 345 333</span>
+          </a>
+        </div>
       </div>
     </div>
   </header>
@@ -748,97 +838,106 @@
   <section class="hero" id="home">
     <div class="container hero-inner">
       <div>
-        <div class="hero-kicker">High-End Design & Construction</div>
+        <div class="hero-eyebrow">Construction · Fit-Out · Engineering</div>
         <h1 class="hero-title">
-          Luxury <span class="hero-highlight">fit-outs & construction</span> delivered with engineering precision.
+          Building <span class="hero-highlight">high-end spaces</span> with engineering certainty.
         </h1>
-        <p class="hero-text">
-          ICG (Innovative Construction Group) is a multidisciplinary contracting firm combining architecture, civil and
-          mechanical engineering, and site management to deliver refined, high-end residential and commercial projects.
+        <p class="hero-subtitle">
+          ICG (Innovative Construction Group) is a multidisciplinary contractor delivering luxury villas, residential renovations,
+          and commercial fit-outs with integrated architecture, structure and MEP.
         </p>
 
-        <div class="hero-badges">
-          <div class="badge">Turn-key design & build</div>
-          <div class="badge">Premium interiors & fit-outs</div>
-          <div class="badge">Coordinated MEP & structure</div>
+        <div class="hero-pills">
+          <div class="pill">High-end fit-outs</div>
+          <div class="pill">Design & build</div>
+          <div class="pill">MEP coordination</div>
+          <div class="pill">Site management</div>
         </div>
 
         <div class="hero-actions">
-          <a href="#contact">
-            <button class="btn-primary">Request a site visit</button>
-          </a>
-          <a href="#services">
-            <button class="btn-ghost">View services</button>
-          </a>
-          <span class="hero-note">We respond within 1–2 business days.</span>
+          <a href="#contact"><button class="btn-primary">Request a project meeting</button></a>
+          <a href="#services"><button class="btn-outline">Explore our services</button></a>
+        </div>
+        <div class="hero-note">
+          Based in Lebanon · Available for select projects in the region.
         </div>
       </div>
 
-      <aside class="hero-card">
-        <div class="hero-card-title">Your project, our responsibility</div>
-        <div class="hero-card-main">
-          A dedicated team — architect, civil & mechanical engineers, and site architect — following your project
-          from concept to handover.
-        </div>
+      <aside class="hero-panel">
+        <div class="hero-panel-title">Engineering-led delivery</div>
+        <p class="hero-panel-text">
+          One integrated team – architect, civil engineer, mechanical engineer and site architect – aligned around your
+          programme, budget and quality targets.
+        </p>
         <div class="hero-stats">
-          <div class="stat">
-            <span class="stat-figure">Full in-house team</span>
-            <span class="stat-label">Architecture · Civil · Mechanical · Site</span>
+          <div class="hero-stat">
+            <div class="hero-stat-label">Core focus</div>
+            <div class="hero-stat-value">Luxury residential & commercial fit-outs</div>
           </div>
-          <div class="stat">
-            <span class="stat-figure">Premium focus</span>
-            <span class="stat-label">High-end villas, apartments & commercial spaces</span>
+          <div class="hero-stat">
+            <div class="hero-stat-label">Scope</div>
+            <div class="hero-stat-value">Design, engineering, execution & handover</div>
           </div>
         </div>
-        <div class="hero-tags">
-          <div class="hero-tag">Value engineering</div>
-          <div class="hero-tag">Detail-driven finishes</div>
-          <div class="hero-tag">Clear communication</div>
+        <div class="hero-footer">
+          Clear coordination, fewer surprises on site, and a single accountable partner.
         </div>
       </aside>
     </div>
   </section>
+
+  <!-- STRIP – sectors / project types -->
+  <div class="strip">
+    <div class="container strip-inner">
+      <div class="strip-title">Project Types</div>
+      <div class="strip-tags">
+        <div class="strip-tag">Private villas & residences</div>
+        <div class="strip-tag">Apartments & penthouses</div>
+        <div class="strip-tag">Offices & commercial spaces</div>
+        <div class="strip-tag">Hospitality & F&B fit-outs</div>
+      </div>
+    </div>
+  </div>
 
   <!-- ABOUT -->
   <section class="about" id="about">
     <div class="container">
       <div class="section-header">
         <div class="section-kicker">About ICG</div>
-        <h2 class="section-title">Innovative Construction for demanding projects</h2>
+        <h2 class="section-title">A compact team for complex projects</h2>
         <p class="section-subtitle">
-          ICG is structured to handle complex, high-budget projects while staying close to every detail on site.
+          ICG is structured to handle demanding, high-budget projects while staying close to every decision on site.
         </p>
       </div>
 
-      <div class="about-grid">
+      <div class="about-layout">
         <div class="about-text">
           <p>
-            We are a specialist contracting company focused on <strong>luxury fit-outs, interior works and full
-            construction</strong>. Our team blends design sensitivity with engineering know-how, making sure what is drawn
-            on paper is actually buildable and durable.
+            We specialise in <strong>luxury fit-outs, renovations and construction</strong> where details, coordination and
+            finishes truly matter. Our work combines architectural thinking with robust engineering and day-to-day control on site.
           </p>
           <p>
-            With architecture, civil and mechanical engineering and a dedicated site architect under one roof, we coordinate
-            everything from layouts and structure to MEP and finishes — so you deal with a single accountable partner.
+            From early layouts and technical drawings to final snagging, we keep design intent, budget and site realities aligned.
+            You deal with one team that speaks both design and construction.
           </p>
 
           <ul class="about-list">
-            <li>One point of contact from concept to handover</li>
-            <li>Technical drawings, shop drawings & site supervision</li>
-            <li>Close coordination with suppliers and specialist subcontractors</li>
-            <li>Transparent planning, BOQs and progress updates</li>
+            <li>Architecture, structure and MEP considered together from day one.</li>
+            <li>Shop drawings, coordination and value engineering handled in-house.</li>
+            <li>Dedicated site architect for details, finishes and daily follow-up.</li>
+            <li>Transparent schedules, BOQs and progress reporting.</li>
           </ul>
         </div>
 
         <aside class="about-card">
-          <div class="about-card-title">ICG core team</div>
-          <p><strong>Architecture</strong> – concept design, layouts, interior design, details.</p>
-          <p><strong>Civil engineering</strong> – structure, coordination, cost and quality control.</p>
-          <p><strong>Mechanical engineering</strong> – HVAC, plumbing and building services integration.</p>
-          <p><strong>Site architect</strong> – daily site presence, finishes, and detail execution.</p>
+          <div class="about-card-title">ICG core disciplines</div>
+          <p><strong>Architecture</strong> · Concept, layouts, interiors and detailing.</p>
+          <p><strong>Civil engineering</strong> · Structural coordination, phasing and cost control.</p>
+          <p><strong>Mechanical engineering</strong> · HVAC, plumbing and building services integration.</p>
+          <p><strong>Site architect</strong> · Presence on site, coordination of trades and finishes.</p>
           <p style="margin-top:0.6rem;">
-            This structure allows ICG to take on larger, high-budget projects while keeping the same level of attention that
-            clients expect from boutique firms.
+            This multidisciplinary approach lets us take on larger, more complex projects while preserving the
+            responsiveness of a boutique firm.
           </p>
         </aside>
       </div>
@@ -846,41 +945,42 @@
   </section>
 
   <!-- SERVICES -->
-  <section id="services">
+  <section class="services" id="services">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header center">
         <div class="section-kicker">Services</div>
-        <h2 class="section-title">What ICG can deliver for you</h2>
+        <h2 class="section-title">What we deliver end-to-end</h2>
         <p class="section-subtitle">
-          Complete, coordinated solutions — from first sketch to final snagging list.
+          From early concept to final handover, ICG can manage your project as a single, coordinated package or as
+          targeted support at specific stages.
         </p>
       </div>
 
       <div class="services-grid">
         <article class="service-card">
-          <div class="service-label">01 · Design & Coordination</div>
+          <div class="service-label">01 · Design & Preconstruction</div>
           <h3 class="service-title">Architectural & Engineering Design</h3>
           <p class="service-desc">
-            Integrated design that thinks about structure, services and finishes from day one.
+            Integrated design that anticipates structure, services and buildability from the beginning.
           </p>
           <ul class="service-items">
-            <li>Architectural concept & space planning</li>
-            <li>Interior design & material selection</li>
+            <li>Concept design & space planning</li>
+            <li>Interior design & material selections</li>
             <li>Structural and MEP coordination</li>
-            <li>Shop drawings & technical details</li>
+            <li>Shop drawings & details for execution</li>
           </ul>
         </article>
 
         <article class="service-card">
-          <div class="service-label">02 · Fit-Out & Construction</div>
+          <div class="service-label">02 · Construction & Fit-Out</div>
           <h3 class="service-title">Turn-Key Contracting</h3>
           <p class="service-desc">
-            Execution of high-end residential and commercial interiors and structures.
+            Full execution of high-end residential and commercial spaces, interior and structural.
           </p>
           <ul class="service-items">
             <li>Demolition, masonry and partitions</li>
-            <li>High-end finishing, joinery & lighting</li>
-            <li>HVAC, plumbing & electrical works</li>
+            <li>High-end finishes, joinery and lighting</li>
+            <li>HVAC, plumbing and electrical works</li>
             <li>Testing, commissioning & handover</li>
           </ul>
         </article>
@@ -889,78 +989,75 @@
           <div class="service-label">03 · Project Support</div>
           <h3 class="service-title">Site Management & Value Engineering</h3>
           <p class="service-desc">
-            Keeping your project on budget and on programme while protecting quality.
+            Keeping quality, programme and cost aligned throughout the project.
           </p>
           <ul class="service-items">
-            <li>Site supervision & progress reporting</li>
-            <li>Cost control & procurement support</li>
-            <li>Alternative details & value engineering</li>
-            <li>Snagging, handing over & close-out</li>
+            <li>Daily site supervision & coordination</li>
+            <li>Cost tracking & procurement support</li>
+            <li>Alternative details and value options</li>
+            <li>Snagging, close-out and maintenance input</li>
           </ul>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- PROJECTS / APPROACH -->
-  <section class="projects" id="projects">
+  <!-- APPROACH -->
+  <section class="approach" id="approach">
     <div class="container">
       <div class="section-header">
         <div class="section-kicker">Approach</div>
-        <h2 class="section-title">How ICG handles your project</h2>
+        <h2 class="section-title">How ICG runs your project</h2>
         <p class="section-subtitle">
-          Every site is different. Our process keeps design intent, budget and on-site realities aligned.
+          A clear, engineering-driven process that reduces friction on site and keeps everyone aligned.
         </p>
       </div>
 
-      <div class="project-grid">
-        <div class="project-main">
-          <h3>From initial survey to final handover</h3>
+      <div class="approach-layout">
+        <div class="approach-main">
+          <h3>From first visit to final handover</h3>
           <p>
-            ICG starts with a detailed understanding of your space and requirements, then moves into coordinated design,
-            clear planning and tightly managed execution. No surprises, no improvisation on site.
+            Every project starts with a detailed understanding of your space, constraints and priorities. We then move through
+            coordinated design, planning and execution with a single point of responsibility and regular communication.
           </p>
-          <div class="project-tags">
-            <div class="project-tag">Site survey & assessment</div>
-            <div class="project-tag">Phased planning</div>
-            <div class="project-tag">Mock-ups & samples</div>
-            <div class="project-tag">Quality inspections</div>
-          </div>
-          <div class="project-meta">
-            <div class="project-meta-item">
-              <span class="project-meta-label">Stage 01</span>
-              <span class="project-meta-value">Brief & Design</span>
+
+          <div class="approach-steps">
+            <div class="step">
+              <div class="step-label">Stage 01</div>
+              <div class="step-title">Brief & Survey</div>
+              <div>Site visit, existing conditions, client objectives and budget alignment.</div>
             </div>
-            <div class="project-meta-item">
-              <span class="project-meta-label">Stage 02</span>
-              <span class="project-meta-value">Details & BOQ</span>
+            <div class="step">
+              <div class="step-label">Stage 02</div>
+              <div class="step-title">Design & Details</div>
+              <div>Layouts, technical drawings, BOQs and coordination between all trades.</div>
             </div>
-            <div class="project-meta-item">
-              <span class="project-meta-label">Stage 03</span>
-              <span class="project-meta-value">Execution & Handover</span>
+            <div class="step">
+              <div class="step-label">Stage 03</div>
+              <div class="step-title">Execution & Handover</div>
+              <div>Supervision, quality checks, testing, commissioning and closing snag lists.</div>
             </div>
           </div>
         </div>
 
-        <div class="project-side">
-          <div class="project-card">
-            <div class="project-card-title">Premium quality control</div>
+        <div class="approach-side">
+          <div class="approach-card">
+            <div class="approach-card-title">Quality built into the process</div>
             <p>
-              Joinery, stone, lighting and finishes are reviewed and coordinated before they reach site, so the final
-              result feels consistent and intentional.
+              Finishes, joinery and lighting are reviewed through samples and mock-ups before full execution, reducing rework
+              and protecting the design intent.
             </p>
           </div>
-          <div class="project-card">
-            <div class="project-card-title">Clear communication</div>
+          <div class="approach-card">
+            <div class="approach-card-title">Transparent communication</div>
             <p>
-              You always know where the project stands: scope, time and cost. We believe in honest reporting and proactive
-              updates, not last-minute surprises.
+              You receive regular updates on progress, upcoming decisions and cost implications—no last-minute surprises.
             </p>
           </div>
-          <div class="project-card">
-            <div class="project-card-title">Flexible collaboration</div>
+          <div class="approach-card">
+            <div class="approach-card-title">Flexible collaboration</div>
             <p>
-              Already have an architect or designer? ICG can execute and coordinate with your existing team while taking
+              Already working with an architect or designer? ICG can coordinate and execute alongside your team while taking
               full responsibility on site.
             </p>
           </div>
@@ -970,36 +1067,33 @@
   </section>
 
   <!-- WHY ICG -->
-  <section>
+  <section class="why">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header center">
         <div class="section-kicker">Why ICG</div>
-        <h2 class="section-title">Engineering-driven, design-focused</h2>
+        <h2 class="section-title">Built for high-end, detail-driven work</h2>
         <p class="section-subtitle">
-          A compact, highly skilled team that treats every project as a one-off, not a template.
+          A multidisciplinary team, a manageable portfolio, and a focus on doing a few projects very well.
         </p>
       </div>
 
       <div class="why-grid">
         <div class="why-card">
-          <div class="why-title">High-end project focus</div>
+          <div class="why-title">Focused on premium projects</div>
           <p>
-            We specialise in luxury villas, apartments and commercial spaces where detailing, materiality and lighting
-            truly matter.
+            We concentrate on villas, apartments and commercial spaces where coordination and finishing quality are critical.
           </p>
         </div>
         <div class="why-card">
-          <div class="why-title">In-house technical team</div>
+          <div class="why-title">Integrated technical team</div>
           <p>
-            Architecture, civil and mechanical engineers plus a site architect under one roof — fewer gaps, fewer
-            coordination problems.
+            Architecture, civil and mechanical engineering plus a site architect, all inside ICG, aligned around your project.
           </p>
         </div>
         <div class="why-card">
-          <div class="why-title">Hands-on site management</div>
+          <div class="why-title">Hands-on presence on site</div>
           <p>
-            We know on-site operations can be challenging. Our structure and presence on site are built specifically to
-            solve that.
+            We know site operations are where projects succeed or fail. Our structure is built specifically to control that.
           </p>
         </div>
       </div>
@@ -1011,50 +1105,47 @@
     <div class="container">
       <div class="section-header">
         <div class="section-kicker">Contact</div>
-        <h2 class="section-title">Tell us about your project</h2>
+        <h2 class="section-title">Talk to ICG about your project</h2>
         <p class="section-subtitle">
-          Share a few details and the ICG team will get back to you to discuss scope, budget and next steps.
+          Share a few details and we’ll get back to you to discuss scope, budget and next steps.
         </p>
       </div>
 
-      <div class="contact-grid">
+      <div class="contact-layout">
         <div class="contact-info">
           <p>
-            Use the form to reach out about new projects, tenders or collaborations. You can also contact ICG directly
-            via phone or email.
+            Whether you’re planning a full villa renovation, a new fit-out or a complex technical upgrade, ICG can support
+            you from concept to handover or at specific stages.
           </p>
 
           <ul class="contact-list">
-            <li><span>Phone:</span> <a href="tel:+000000000">+000 000 000</a></li>
+            <li><span>Phone:</span> <a href="tel:+96170345333">+961 70 345 333</a></li>
             <li><span>Email:</span> <a href="mailto:info@icgsal.com">info@icgsal.com</a></li>
             <li><span>Website:</span> <a href="https://icgsal.com" target="_blank">icgsal.com</a></li>
           </ul>
 
           <p class="contact-note">
-            Replace the contact details above with your real phone number and email address, then upload this file to your hosting.
+            Prefer WhatsApp or a call? Reach us directly on the number above and we can schedule a site visit.
           </p>
         </div>
 
-        <form class="contact-form">
-          <!--
-            To make this form send emails, you can connect it to a free service like Formspree.
-            Example: set action="https://formspree.io/f/your-id" and method="POST"
-          -->
-          <div class="contact-form-row">
+        <div class="contact-card">
+          <!-- To make this form send emails, connect it to a service (e.g. Formspree) and add action / method -->
+          <div class="contact-row">
             <div class="field">
               <label for="name">Full name</label>
-              <input type="text" id="name" name="name" placeholder="Client name" required>
+              <input id="name" name="name" type="text" placeholder="Client name">
             </div>
             <div class="field">
               <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="client@example.com" required>
+              <input id="email" name="email" type="email" placeholder="client@example.com">
             </div>
           </div>
 
-          <div class="contact-form-row">
+          <div class="contact-row">
             <div class="field">
               <label for="phone">Phone / WhatsApp</label>
-              <input type="tel" id="phone" name="phone" placeholder="+000 000 000">
+              <input id="phone" name="phone" type="tel" placeholder="+961 70 345 333">
             </div>
             <div class="field">
               <label for="service">Type of project</label>
@@ -1069,16 +1160,16 @@
             </div>
           </div>
 
-          <div class="field">
+          <div class="field" style="margin-bottom:0.6rem;">
             <label for="message">Project details</label>
             <textarea id="message" name="message" placeholder="Location, approximate area, budget, timeline…"></textarea>
           </div>
 
           <div class="contact-submit">
-            <button type="submit" class="btn-primary-contact">Send enquiry</button>
-            <span class="contact-note">By submitting, you agree to be contacted by ICG regarding your project.</span>
+            <button type="button" class="btn-contact">Send enquiry</button>
+            <span class="contact-note">Form is for illustration. Connect it to your preferred email service to receive submissions.</span>
           </div>
-        </form>
+        </div>
       </div>
     </div>
   </section>
@@ -1092,7 +1183,6 @@
   </footer>
 
   <script>
-    // Set current year in footer
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 
