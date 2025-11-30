@@ -47,103 +47,15 @@
     }
 
     .container {
-      max-width: 1280px;
+      max-width: 1360px;
       margin: 0 auto;
       padding: 0 1.75rem;
     }
 
-    /* HEADER */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 40;
-      background: #ffffff;
-      border-bottom: 1px solid rgba(15,23,42,0.08);
-      box-shadow: 0 4px 14px rgba(15,23,42,0.06);
-    }
-
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.6rem 0;
-      gap: 1.5rem;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .brand-logo {
-      width: 115px;
-      height: 115px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .brand-logo img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.7rem;
-      font-size: 0.95rem;
-      color: #1e293b;
-    }
-
-    nav a {
-      position: relative;
-      padding-bottom: 0.15rem;
-    }
-
-    nav a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0;
-      height: 2px;
-      background: var(--icg-accent);
-      transition: width 0.2s ease;
-    }
-
-    nav a:hover::after {
-      width: 100%;
-    }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 1.8rem;
-    }
-
-    .header-phone {
-      font-size: 0.9rem;
-      color: #0b3043;
-      white-space: nowrap;
-      font-weight: 500;
-    }
-
-    .header-phone span {
-      font-weight: 700;
-      color: var(--icg-accent);
-    }
-
-    .header-phone:hover {
-      opacity: 0.9;
-    }
-
-    /* HERO SLIDER */
+    /* HERO (full top, includes logo + nav) */
     .hero {
       position: relative;
-      min-height: 80vh;
+      min-height: 90vh;
       color: #ffffff;
       overflow: hidden;
       background: #020617;
@@ -167,7 +79,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(to bottom right, rgba(2,6,23,0.8), rgba(15,23,42,0.96));
+      background: linear-gradient(to bottom right, rgba(2,6,23,0.82), rgba(15,23,42,0.97));
     }
 
     .hero-slide.active {
@@ -177,9 +89,103 @@
     .hero-overlay {
       position: relative;
       z-index: 1;
-      padding: 5rem 0 4rem;
+      padding: 1.6rem 0 4rem;
+      display: flex;
+      align-items: stretch;
+      min-height: 90vh;
+    }
+
+    .hero-inner-wrap {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    /* Top bar inside hero */
+    .hero-top {
       display: flex;
       align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .hero-brand {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .hero-logo {
+      width: 160px;
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.8rem;
+      font-size: 0.95rem;
+      color: #e2e8f0;
+    }
+
+    nav a {
+      position: relative;
+      padding-bottom: 0.15rem;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--icg-accent);
+      transition: width 0.2s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .hero-top-right {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .header-phone {
+      font-size: 0.9rem;
+      color: #e5f2ff;
+      white-space: nowrap;
+      font-weight: 500;
+    }
+
+    .header-phone span {
+      font-weight: 700;
+      color: var(--icg-accent);
+    }
+
+    .header-phone:hover {
+      opacity: 0.9;
+    }
+
+    /* Hero content */
+    .hero-main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding-bottom: 1.5rem;
     }
 
     .hero-inner {
@@ -198,7 +204,7 @@
     }
 
     .hero-title {
-      font-size: clamp(2.6rem, 3.6vw + 1rem, 3.6rem);
+      font-size: clamp(2.7rem, 3.8vw + 1rem, 3.9rem);
       line-height: 1.04;
       margin-bottom: 0.8rem;
     }
@@ -226,7 +232,7 @@
       border-radius: 999px;
       border: 1px solid rgba(255,255,255,0.2);
       padding: 0.4rem 0.9rem;
-      background: rgba(15,23,42,0.4);
+      background: rgba(15,23,42,0.5);
       color: #e2f3ff;
     }
 
@@ -350,7 +356,7 @@
       margin: 0 auto;
     }
 
-    /* MARKETS */
+    /* MARKETS – big project imagery */
     .markets {
       background: #ffffff;
     }
@@ -371,7 +377,7 @@
     }
 
     .market-image {
-      height: 170px;
+      height: 190px;
       background-size: cover;
       background-position: center;
       position: relative;
@@ -381,7 +387,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(15,23,42,0.85), transparent 55%);
+      background: linear-gradient(to top, rgba(15,23,42,0.9), transparent 55%);
     }
 
     .market-label {
@@ -412,6 +418,44 @@
     .market-text {
       font-size: 0.86rem;
       color: var(--icg-muted);
+    }
+
+    /* STRIP */
+    .strip {
+      background: var(--icg-dark);
+      color: #e5f2ff;
+      padding: 1.6rem 0;
+    }
+
+    .strip-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.9rem;
+    }
+
+    .strip-title {
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.82rem;
+      color: #a3d5e6;
+    }
+
+    .strip-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+    }
+
+    .strip-tag {
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.7);
+      padding: 0.3rem 0.8rem;
+      font-size: 0.84rem;
+      background: rgba(15,23,42,0.4);
     }
 
     /* ABOUT */
@@ -468,44 +512,6 @@
       font-weight: 600;
       margin-bottom: 0.4rem;
       color: var(--icg-mid);
-    }
-
-    /* STRIP */
-    .strip {
-      background: var(--icg-dark);
-      color: #e5f2ff;
-      padding: 1.6rem 0;
-    }
-
-    .strip-inner {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.2rem;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 0.9rem;
-    }
-
-    .strip-title {
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-size: 0.82rem;
-      color: #a3d5e6;
-    }
-
-    .strip-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.55rem;
-    }
-
-    .strip-tag {
-      border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.7);
-      padding: 0.3rem 0.8rem;
-      font-size: 0.84rem;
-      background: rgba(15,23,42,0.4);
     }
 
     /* SERVICES */
@@ -681,7 +687,7 @@
       color: var(--icg-mid);
     }
 
-    /* INSIGHTS / NEWS */
+    /* INSIGHTS */
     .insights {
       background: #0f172a;
       color: #e5f2ff;
@@ -866,7 +872,7 @@
     }
 
     /* RESPONSIVE */
-    @media (max-width: 1100px) {
+    @media (max-width: 1200px) {
       .markets-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
@@ -880,11 +886,20 @@
       }
 
       .hero-overlay {
-        padding-top: 4.2rem;
+        padding-top: 1.2rem;
       }
 
       .insights-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .hero-top {
+        gap: 1rem;
+      }
+
+      .hero-logo {
+        width: 130px;
+        height: 130px;
       }
     }
 
@@ -893,23 +908,13 @@
         display: none;
       }
 
-      .nav-inner {
-        padding-top: 0.4rem;
-        padding-bottom: 0.4rem;
+      .hero-top {
+        justify-content: space-between;
       }
 
-      .brand-logo {
-        width: 90px;
-        height: 90px;
-      }
-
-      .nav-right {
-        gap: 0.7rem;
-      }
-
-      .hero-bottom {
-        flex-direction: column;
-        align-items: flex-start;
+      .hero-logo {
+        width: 110px;
+        height: 110px;
       }
     }
 
@@ -938,89 +943,90 @@
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="container">
-      <div class="nav-inner">
-        <div class="brand">
-          <div class="brand-logo">
-            <!-- Make sure icg-logo.png is in your repo root -->
-            <img src="icg-logo.png" alt="ICG – Innovative Construction Group">
-          </div>
-        </div>
-
-        <div class="nav-right">
-          <nav>
-            <ul>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#markets">Markets</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#approach">Approach</a></li>
-              <li><a href="#insights">Insights</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </nav>
-          <a href="tel:+96170345333" class="header-phone">
-            Call us: <span>+961 70 345 333</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- HERO with SLIDER -->
+  <!-- HERO: includes logo + nav + phone, no separate header -->
   <section class="hero" id="home">
     <div class="hero-slider">
-      <!-- More "premium" architecture / construction images -->
-      <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1506377295352-e3154d43ea9e?auto=format&fit=crop&w=1600&q=80');"></div>
-      <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1486304873000-235643847519?auto=format&fit=crop&w=1600&q=80');"></div>
+      <!-- Big construction project images (no interiors, no cheap stock) -->
+      <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1486304873000-235643847519?auto=format&fit=crop&w=1600&q=80');"></div>
       <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1600&q=80');"></div>
+      <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1518611507436-f9221403cca2?auto=format&fit=crop&w=1600&q=80');"></div>
     </div>
 
     <div class="hero-overlay">
       <div class="container">
-        <div class="hero-inner">
-          <div>
-            <div class="hero-eyebrow">Construction · Fit-Out · Engineering</div>
-            <h1 class="hero-title">
-              Building <span class="hero-highlight">high-end spaces</span> with engineering certainty.
-            </h1>
-            <p class="hero-subtitle">
-              ICG (Innovative Construction Group) is a multidisciplinary contractor delivering luxury villas, residential renovations,
-              and commercial fit-outs with integrated architecture, structure and MEP.
-            </p>
-          </div>
-
-          <div>
-            <div class="hero-pills">
-              <div class="pill">High-end fit-outs</div>
-              <div class="pill">Design & build</div>
-              <div class="pill">MEP coordination</div>
-              <div class="pill">Site management</div>
+        <div class="hero-inner-wrap">
+          <!-- top line with BIG logo + nav + phone -->
+          <div class="hero-top">
+            <div class="hero-brand">
+              <div class="hero-logo">
+                <!-- Make sure this file exists in your repo as icg-logo.png -->
+                <img src="icg-logo.png" alt="ICG – Innovative Construction Group">
+              </div>
             </div>
 
-            <div class="hero-actions">
-              <a href="#contact"><button class="btn-primary">Request a project meeting</button></a>
-              <a href="#services"><button class="btn-outline">Explore our services</button></a>
-            </div>
-            <div class="hero-note">
-              Based in Lebanon · Available for select projects in the region.
+            <div class="hero-top-right">
+              <nav>
+                <ul>
+                  <li><a href="#markets">Markets</a></li>
+                  <li><a href="#about">About</a></li>
+                  <li><a href="#services">Services</a></li>
+                  <li><a href="#approach">Approach</a></li>
+                  <li><a href="#insights">Insights</a></li>
+                  <li><a href="#contact">Contact</a></li>
+                </ul>
+              </nav>
+              <a href="tel:+96170345333" class="header-phone">
+                Call us: <span>+961 70 345 333</span>
+              </a>
             </div>
           </div>
 
-          <div class="hero-bottom">
-            <div class="hero-stats">
-              <div class="hero-stat">Luxury residential & commercial focus</div>
-              <div class="hero-stat">Architecture · Civil · Mechanical · Site</div>
-            </div>
-            <div class="hero-dots">
-              <div class="hero-dot active"></div>
-              <div class="hero-dot"></div>
-              <div class="hero-dot"></div>
+          <!-- main hero content -->
+          <div class="hero-main">
+            <div class="hero-inner">
+              <div>
+                <div class="hero-eyebrow">Construction · Fit-Out · Engineering</div>
+                <h1 class="hero-title">
+                  Building <span class="hero-highlight">high-end spaces</span> with engineering certainty.
+                </h1>
+                <p class="hero-subtitle">
+                  ICG (Innovative Construction Group) is a multidisciplinary contractor delivering luxury villas, residential renovations,
+                  and commercial fit-outs with integrated architecture, structure and MEP.
+                </p>
+              </div>
+
+              <div>
+                <div class="hero-pills">
+                  <div class="pill">High-end fit-outs</div>
+                  <div class="pill">Design & build</div>
+                  <div class="pill">MEP coordination</div>
+                  <div class="pill">Site management</div>
+                </div>
+
+                <div class="hero-actions">
+                  <a href="#contact"><button class="btn-primary">Request a project meeting</button></a>
+                  <a href="#services"><button class="btn-outline">Explore our services</button></a>
+                </div>
+                <div class="hero-note">
+                  Based in Lebanon · Available for select projects in the region.
+                </div>
+              </div>
+
+              <div class="hero-bottom">
+                <div class="hero-stats">
+                  <div class="hero-stat">Luxury residential & commercial focus</div>
+                  <div class="hero-stat">Architecture · Civil · Mechanical · Site</div>
+                </div>
+                <div class="hero-dots">
+                  <div class="hero-dot active"></div>
+                  <div class="hero-dot"></div>
+                  <div class="hero-dot"></div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+
+        </div><!-- /.hero-inner-wrap -->
       </div>
     </div>
   </section>
@@ -1038,7 +1044,7 @@
 
       <div class="markets-grid">
         <article class="market-card">
-          <div class="market-image" style="background-image:url('https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=1400&q=80');">
+          <div class="market-image" style="background-image:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1400&q=80');">
             <div class="market-label">Residential</div>
           </div>
           <div class="market-body">
@@ -1050,7 +1056,7 @@
         </article>
 
         <article class="market-card">
-          <div class="market-image" style="background-image:url('https://images.unsplash.com/photo-1496307042754-89c3d0f04bb0?auto=format&fit=crop&w=1400&q=80');">
+          <div class="market-image" style="background-image:url('https://images.unsplash.com/photo-1483478550801-ceba5fe50e8e?auto=format&fit=crop&w=1400&q=80');">
             <div class="market-label">Commercial</div>
           </div>
           <div class="market-body">
@@ -1062,7 +1068,7 @@
         </article>
 
         <article class="market-card">
-          <div class="market-image" style="background-image:url('https://images.unsplash.com/photo-1545243424-0ce743321e11?auto=format&fit=crop&w=1400&q=80');">
+          <div class="market-image" style="background-image:url('https://images.unsplash.com/photo-1501776192296-0fc3c01b2718?auto=format&fit=crop&w=1400&q=80');">
             <div class="market-label">Hospitality</div>
           </div>
           <div class="market-body">
@@ -1074,7 +1080,7 @@
         </article>
 
         <article class="market-card">
-          <div class="market-image" style="background-image:url('https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1400&q=80');">
+          <div class="market-image" style="background-image:url('https://images.unsplash.com/photo-1590496793130-42a996133562?auto=format&fit=crop&w=1400&q=80');">
             <div class="market-label">Technical</div>
           </div>
           <div class="market-body">
@@ -1088,7 +1094,7 @@
     </div>
   </section>
 
-  <!-- STRIP – project types -->
+  <!-- STRIP -->
   <div class="strip">
     <div class="container strip-inner">
       <div class="strip-title">Project Types</div>
@@ -1302,7 +1308,7 @@
     </div>
   </section>
 
-  <!-- INSIGHTS / NEWS -->
+  <!-- INSIGHTS -->
   <section class="insights" id="insights">
     <div class="container">
       <div class="section-header">
